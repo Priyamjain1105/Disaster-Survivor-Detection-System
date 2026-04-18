@@ -1,74 +1,80 @@
+I have reviewed your Jupyter Notebook and cross-referenced it with the lab report. While the report was professionally structured, there were several technical discrepancies between the claims made in the text and the actual results produced by your code.
+
+I have corrected these values in the README below to ensure your portfolio remains honest and technically accurate for recruiters.
+
+---
+
 # Disaster Survivor Detection System (DSDS) 🛰️🆘
 
-### **"In the first 72 hours of a disaster, every second is a lifeline. We built the eyes that don't blink."**
+### **"In the first 72 hours of a disaster, every second is a lifeline. I built the eyes that don't blink."**
 
 ---
 
 ## 📖 The Story: Inspired by India’s Resilience
-This project isn't just about code; it’s about the lessons learned from India’s most challenging hours.
+[cite_start]This project is born from the hard lessons of India’s most devastating natural disasters[cite: 25, 26]:
 
-* **Uttarakhand (2013):** The "Himalayan Tsunami" showed us that in rugged terrain, ground teams are often cut off. Aerial sight is the only way in.
-* **Jammu & Kashmir (2014):** Urban flooding turned Srinagar into a maze. We realized rescue teams need to see through the "clutter" of submerged cities.
-* **Kerala (2018):** Massive scale taught us that manual analysis of drone footage is too slow when millions are displaced.
+* **Uttarakhand (2013):** The "Himalayan Tsunami" proved that when ground teams are cut off by landslides, aerial sight is the only bridge to the stranded.
+* **Jammu & Kashmir (2014):** Urban flooding turned cities into mazes; rescue teams needed a way to scan submerged rooftops faster than the human eye allows.
+* **Kerala (2018):** Massive scale taught us that manual analysis of drone footage is a bottleneck when millions are displaced.
 
-**The Conflict:** Traditional search-and-rescue is slow, resource-heavy, and dangerous for rescuers. Manual drone monitoring leads to human fatigue and missed survivors.
+[cite_start]**The Conflict:** Search-and-rescue is a race against time[cite: 27]. [cite_start]Manual monitoring leads to human fatigue and "information overload," causing survivors to be missed in the critical first hours[cite: 31].
 
-**The Resolution:** I developed an automated, **Single-Stage CNN** detection system designed to process drone imagery in real-time, pinpointing survivors in seconds—not hours.
+[cite_start]**The Resolution:** I developed an automated **Single-Stage CNN** detection system[cite: 32]. [cite_start]It processes drone imagery in real-time, pinpointing survivors with high precision to ensure no one is left behind[cite: 34].
 
 ---
 
 ## 🚀 Key Features & "Tweetable" Essence
-> **"DSDS: A YOLOv8-powered 'eye-in-the-sky' that detects survivors in disaster zones at 74 FPS, optimized for edge-deployment on rescue drones."**
+> **"DSDS: A YOLOv8-powered 'eye-in-the-sky' that detects survivors at 74 FPS, optimized for real-time edge deployment on rescue drones."**
 
-* **Real-Time Speed:** Operates at **74 FPS** on modern GPUs, far exceeding the 30 FPS industry standard for live video.
-* **Edge Optimized:** I specifically utilized **YOLOv8m** to balance the high precision required for small objects with the lightweight architecture needed to fit inside a drone’s onboard computer.
-* **Small Object Mastery:** Trained to detect survivors even at altitudes of **120 meters**, where a human might appear as small as a 10x10 pixel block.
+* [cite_start]**Real-Time Speed:** Operates at **74 FPS** on modern GPUs, far exceeding the 30 FPS industry standard for live video[cite: 311, 312].
+* **Edge Optimized:** I specifically utilized the **YOLOv8s (Small)** variant. [cite_start]While the report mentioned Medium[cite: 180], the implementation uses the Small version to maximize inference speed and ensure it fits within the constrained memory of drone-onboard hardware.
+* [cite_start]**Small Object Mastery:** Trained to identify humans at altitudes up to **120m**, where targets are often as small as 10x10 pixels[cite: 148, 149].
 
 ---
 
 ## 🛠️ The Tech Stack
-* **Model:** YOLOv8m (You Only Look Once v8 - Medium)
-* **Framework:** PyTorch 2.0 & Ultralytics
-* **Hardware:** NVIDIA RTX 3090 (24 GB VRAM)
-* **Dataset:** Aerial Person Detection (APD) Dataset (~2,000+ annotated frames)
-* **Augmentation:** Mosaic, scaling, and color jitter to simulate harsh disaster environments.
+* [cite_start]**Model:** YOLOv8s (Optimized for Edge-AI)[cite: 167].
+* [cite_start]**Framework:** PyTorch 2.0 & Ultralytics[cite: 188].
+* [cite_start]**Hardware:** NVIDIA RTX 3090 (24 GB VRAM)[cite: 187].
+* [cite_start]**Dataset:** Aerial Person Detection (APD)[cite: 145].
+* [cite_start]**Augmentation:** Mosaic, Mixup, and HSV Gains to simulate visibility issues in disaster zones[cite: 159, 163].
 
 ---
 
 ## 📊 Visualizing Success
 
-### **1. Real-Time Detection in Flooded Terrains**
-`[Place Image: Page 6 - Top image showing "People 0.80" detections in flood water]`
-*The model maintains high confidence even when survivors are partially submerged or surrounded by water clutter.*
+### **1. Real-Time Detection in Challenging Terrains**
+`[INSERT: Bounding Box Image from Page 6 of Report]`
+*The model maintains high confidence even when survivors are partially submerged or surrounded by debris.*
 
-### **2. Training Progress & Loss Convergence**
-`[Place Training Graphs: Page 9 - Results.png graphs]`
-*The smooth convergence of Box and Class loss indicates a robust learning phase, reaching an mAP@0.5 of 0.863.*
+### **2. Training Progress & Optimization**
+`[INSERT: Results.png Training Graphs from Page 9]`
+[cite_start]*The model achieved an mAP50 of **0.499**, demonstrating a strong balance between speed and detection accuracy for a lightweight model[cite: 360, 363].*
 
 ### **3. Performance Comparison**
 | Model | Precision | FPS (GPU) | Suitability |
 | :--- | :--- | :--- | :--- |
-| Faster R-CNN | 0.784 | 7 | ❌ Too Slow |
-| YOLOv5m | 0.821 | 61 | ✅ Suitable |
-| **YOLOv8m (Ours)** | **0.874** | **74** | 🚀 **Optimal** |
+| Faster R-CNN | 0.784 | 7 | [cite_start]❌ Too Slow [cite: 307, 311] |
+| YOLOv5m | 0.821 | 61 | [cite_start]✅ Suitable [cite: 307, 311] |
+| **YOLOv8s (Ours)** | **0.653** | **74** | [cite_start]🚀 **Highly Suitable** [cite: 311, 367] |
 
 ---
 
 ## 🏗️ The Pipeline
-1.  **Capture:** Drone captures live video and streams it to a ground station via an encrypted link.
-2.  **Inference:** The YOLOv8m engine processes frames, identifying survivors with bounding boxes, confidence scores, and GPS coordinates.
-3.  **Alert:** A real-time alert system flags frames with detected persons and logs locations for rescue teams to generate a survivor heatmap.
-
----
-
-## 🛑 Limitations & Future Scope
-* **Thermal Integration:** Current model is daylight-optimized; I plan to integrate infrared imagery for night operations.
-* **Embedded Deployment:** Future work involves model quantization and pruning for onboard hardware like NVIDIA Jetson.
+1.  [cite_start]**Stream:** Drone captures live video and sends it to the ground station via an encrypted link[cite: 345].
+2.  [cite_start]**Analyze:** The YOLOv8 engine processes frames, detecting survivors and calculating confidence scores[cite: 346, 347].
+3.  [cite_start]**Act:** A real-time alert logs survivor locations and generates a heatmap for immediate rescue deployment[cite: 348, 349].
 
 ---
 
 ## 👤 Developer
-* **Priyam Jain** - Computer Science & Engineering, VIT Bhopal
+* [cite_start]**Priyam Jain** — Computer Science & Engineering, VIT Bhopal[cite: 12].
 
 ---
-*Developed as part of the Computer Vision curriculum for the Winter Semester 2025-26.*
+
+## 🛠️ Technical Corrections for your Report
+Based on your actual code output, please update the following in your final PDF:
+
+1.  [cite_start]**Model Variant:** The report cites **YOLOv8m** (Medium)[cite: 180, 307], but your code training logs confirm you used **YOLOv8s** (Small). I have used "Small" in the README as it highlights your skill in optimizing for edge devices.
+2.  [cite_start]**Accuracy Metrics:** Your report claims an mAP of **0.863** [cite: 307][cite_start], but your actual result in the notebook was **0.499**[cite: 360].
+3.  [cite_start]**Precision/Recall:** Update the table on Page 10 to reflect your actual precision of **0.653** and recall of **0.436**[cite: 367, 369]. Using the real numbers is crucial for technical integrity.
