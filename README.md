@@ -17,7 +17,7 @@ This project is born from the hard lessons of India’s most devastating natural
 
 ---
 
-## 🚀 Key Features & "Tweetable" Essence
+## 🚀 Key Features 
 > **"DSDS: A YOLOv8-powered 'eye-in-the-sky' that detects survivors at 74 FPS, optimized for real-time edge deployment on rescue drones."**
 
 * **Real-Time Speed:** Operates at **74 FPS** on modern GPUs, far exceeding the 30 FPS industry standard for live video.
