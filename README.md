@@ -38,11 +38,13 @@ This project is born from the hard lessons of India’s most devastating natural
 ## 📊 Visualizing Success
 
 ### **1. Real-Time Detection in Challenging Terrains**
-`[INSERT: Bounding Box Image from Page 6 of Report]`
+<img width="916" height="685" alt="image" src="https://github.com/user-attachments/assets/aa881679-918e-409d-b458-654ebb68254e" />
+
 *The model maintains high confidence even when survivors are partially submerged or surrounded by debris.*
 
 ### **2. Training Progress & Optimization**
-`[INSERT: Results.png Training Graphs from Page 9]`
+<img width="1394" height="761" alt="image" src="https://github.com/user-attachments/assets/d7211bf7-ad70-4abe-a5d6-f8859f65386c" />
+
 *The model achieved an mAP50 of **0.499**, demonstrating a strong balance between speed and detection accuracy for a lightweight model.*
 
 ### **3. Performance Comparison**
